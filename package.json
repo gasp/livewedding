@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "jasmine */*.test.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -11,7 +12,12 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
+    "node-instagram": "^4.1.0",
     "pug": "2.0.0-beta11",
+    "redis": "^2.8.0",
     "stylus": "0.54.5"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
   }
 }
