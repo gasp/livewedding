@@ -2,5 +2,9 @@ extends layout
 
 block content
   h1 wall
-  p your latest image containig the selected hashtag
-  img(src=imgsrc)
+  p your latest posts containig
+    span.blue= ' #'+hashtag
+  each post in feed
+    div
+      div= post.username
+      img(src=post.image.url)

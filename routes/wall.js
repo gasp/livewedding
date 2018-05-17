@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const config = require('../config');
+const { hashtag } = require('../config').app;
 const red = require('../lib/red');
 const insta = require('../lib/insta');
 const simpleFeed = require('../lib/simpleFeed');
@@ -14,9 +14,9 @@ router.get('/', (req, res, next) => {
     return next();
   }
 
-  insta.get(`tags/${config.app.hashtag}/media/recent`).then(data => {
+  insta.get(`tags/${hashtag}/media/recent`).then(data => {
     const feed = simpleFeed(data);
-    res.render('wall', {imgsrc: feed[0].image.url});
+    res.render('wall', {feed, hashtag});
 
   }).catch(err => {
     next(err);
