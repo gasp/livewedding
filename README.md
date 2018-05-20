@@ -22,6 +22,15 @@ npm start
 ```
 npm run test
 ```
+## Running in prod
+set env vars (see in /config)
+```
+REDIS_URL
+APP_URL
+APP_PORT
+INSTAGRAM_CLIENT_ID
+INSTAGRAM_CLIENT_SECRET
+```
 
 ## License
 
